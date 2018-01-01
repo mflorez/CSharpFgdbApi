@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{916828E0-9007-4017-BCB6-0D2300E1E0B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSharp.FgdbApiTests</RootNamespace>
+    <AssemblyName>CSharp.FgdbApiTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Esri.ArcGISRuntime, Version=10.2.7.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="Esri.FileGDBAPI, Version=1.5.0.248, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Esri.FileGDBAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="FgdbHelperTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSharp.FgdbApi\CSharp.FgdbApi.csproj">
+      <Project>{281EC37A-C586-4A50-A676-762D6AC1A749}</Project>
+      <Name>CSharp.FgdbApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FileGDBAPI.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FileGDBAPID.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="samples\data\Cities.gdb\a00000001.gdbindexes" />
+    <None Include="samples\data\Cities.gdb\a00000001.gdbtable" />
+    <None Include="samples\data\Cities.gdb\a00000001.gdbtablx" />
+    <None Include="samples\data\Cities.gdb\a00000001.TablesByName.atx" />
+    <None Include="samples\data\Cities.gdb\a00000002.gdbtable" />
+    <None Include="samples\data\Cities.gdb\a00000002.gdbtablx" />
+    <None Include="samples\data\Cities.gdb\a00000003.gdbindexes" />
+    <None Include="samples\data\Cities.gdb\a00000003.gdbtable" />
+    <None Include="samples\data\Cities.gdb\a00000003.gdbtablx" />
+    <None Include="samples\data\Cities.gdb\a00000004.CatItemsByPhysicalName.atx" />
+    <None Include="samples\data\Cities.gdb\a00000004.CatItemsByType.atx" />
+    <None Include="samples\data\Cities.gdb\a00000004.FDO_UUID.atx" />
+    <None Include="samples\data\Cities.gdb\a00000004.freelist" />
+    <None Include="samples\data\Cities.gdb\a00000004.gdbindexes" />
+    <None Include="samples\data\Cities.gdb\a00000004.gdbtable" />
+    <None Include="samples\data\Cities.gdb\a00000004.gdbtablx" />
+    <None Include="samples\data\Cities.gdb\a00000004.spx" />
+    <None Include="samples\data\Cities.gdb\a00000005.CatItemTypesByName.atx" />
+    <None Include="samples\data\Cities.gdb\a00000005.CatItemTypesByParentTypeID.atx" />
+    <None Include="samples\data\Cities.gdb\a00000005.CatItemTypesByUUID.atx" />
+    <None Include="samples\data\Cities.gdb\a00000005.gdbindexes" />
+    <None Include="samples\data\Cities.gdb\a00000005.gdbtable" />
+    <None Include="samples\data\Cities.gdb\a00000005.gdbtablx" />
+    <None Include="samples\data\Cities.gdb\a00000006.CatRelsByDestinationID.atx" />
+    <None Include="samples\data\Cities.gdb\a00000006.CatRelsByOriginID.atx" />
+    <None Include="samples\data\Cities.gdb\a00000006.CatRelsByType.atx" />
+    <None Include="samples\data\Cities.gdb\a00000006.FDO_UUID.atx" />
+    <None Include="samples\data\Cities.gdb\a00000006.gdbindexes" />
+    <None Include="samples\data\Cities.gdb\a00000006.gdbtable" />
+    <None Include="samples\data\Cities.gdb\a00000006.gdbtablx" />
+    <None Include="samples\data\Cities.gdb\a00000007.CatRelTypesByBackwardLabel.atx" />
+    <None Include="samples\data\Cities.gdb\a00000007.CatRelTypesByDestItemTypeID.atx" />
+    <None Include="samples\data\Cities.gdb\a00000007.CatRelTypesByForwardLabel.atx" />
+    <None Include="samples\data\Cities.gdb\a00000007.CatRelTypesByName.atx" />
+    <None Include="samples\data\Cities.gdb\a00000007.CatRelTypesByOriginItemTypeID.atx" />
+    <None Include="samples\data\Cities.gdb\a00000007.CatRelTypesByUUID.atx" />
+    <None Include="samples\data\Cities.gdb\a00000007.gdbindexes" />
+    <None Include="samples\data\Cities.gdb\a00000007.gdbtable" />
+    <None Include="samples\data\Cities.gdb\a00000007.gdbtablx" />
+    <None Include="samples\data\Cities.gdb\a00000009.gdbindexes" />
+    <None Include="samples\data\Cities.gdb\a00000009.gdbtable" />
+    <None Include="samples\data\Cities.gdb\a00000009.gdbtablx" />
+    <None Include="samples\data\Cities.gdb\a00000009.spx" />
+    <None Include="samples\data\Cities.gdb\gdb" />
+    <None Include="samples\data\Cities.gdb\timestamps" />
+    <None Include="samples\data\City\Cities.cpg" />
+    <None Include="samples\data\City\Cities.dbf" />
+    <None Include="samples\data\City\Cities.prj" />
+    <None Include="samples\data\City\Cities.sbn" />
+    <None Include="samples\data\City\Cities.sbx" />
+    <None Include="samples\data\City\Cities.shp" />
+    <None Include="samples\data\City\Cities.shx" />
+    <None Include="samples\FeatureDatasets\FeatureDatasets.cpp" />
+    <None Include="samples\FeatureDatasets\FeatureDatasets_VS2015.vcxproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Esri.FileGDBAPI.dll" />
+    <Content Include="samples\data\City\Cities.shp.xml" />
+    <Content Include="samples\FeatureDatasets\BusStopsTable.xml" />
+    <Content Include="samples\FeatureDatasets\MyFeatureClass.xml" />
+    <Content Include="samples\FeatureDatasets\TransitFD.xml" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

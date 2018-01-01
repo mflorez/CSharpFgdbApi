@@ -1,0 +1,1 @@
+xsd.exe FileGDBAPI.xsd /namespace:Sharp.FgdbApi.Schema /classes
