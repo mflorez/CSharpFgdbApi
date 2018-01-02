@@ -91,14 +91,8 @@ namespace CSharp.FgdbApi.Utilities
                  * */
                 xAtt = new XmlAttributes();
                 xAtt.XmlIgnore = true;
-                overrides.Add(typeof(Fields), Constants.FieldArray, xAtt);
-
-                xAtt = new XmlAttributes();
-                xAtt.XmlIgnore = true;
-                overrides.Add(typeof(Indexes), Constants.IndexArray, xAtt);
-
-                xAtt = new XmlAttributes();
-                xAtt.XmlIgnore = true;
+                overrides.Add(typeof(Fields), Constants.FieldArray, xAtt);                
+                overrides.Add(typeof(Indexes), Constants.IndexArray, xAtt);                
                 overrides.Add(typeof(DETable), Constants.RelationshipClassNames, xAtt);
                 overrides.Add(typeof(DETable), Constants.ExtensionProperties, xAtt);
                 overrides.Add(typeof(PropertySet), Constants.PropertyArray, xAtt);
